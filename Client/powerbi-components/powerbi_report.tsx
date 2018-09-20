@@ -4,6 +4,7 @@ import * as util from './util';
 declare var powerbi: pbi.service.Service;
 
 export interface IProps {
+  id: string
   accessToken: string;
   embedUrl: string;
   pageName?: string;
@@ -13,7 +14,7 @@ export interface IProps {
   onEmbedded?: (embed: pbi.Embed) => any;
 }
 
-export class Report extends React.Component<IProps, {}> {
+export class PowerBIReport extends React.Component<IProps, {}> {
   component: pbi.Embed;
   rootElement: HTMLElement;
   
@@ -89,4 +90,4 @@ export class Report extends React.Component<IProps, {}> {
 //   embedUrl: React.PropTypes.string
 // }
 
-export default Report;
+export default PowerBIReport;
