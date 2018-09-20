@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as pbi from 'powerbi-client';
 import * as util from './util';
 declare var powerbi: pbi.service.Service;
-
+/*
 export interface IProps {
   id: string
   accessToken: string;
@@ -12,13 +12,22 @@ export interface IProps {
   filterPaneEnabled?: boolean;
   navContentPaneEnabled?: boolean;
   onEmbedded?: (embed: pbi.Embed) => any;
+}*/
+
+export interface PowerBIReportProps extends pbi.IEmbedConfiguration {
+  reportId?: string,
+  mode?: string,
+  name?: string,
+  onEmbedded?: (embed: pbi.Embed) => any,
+  filterPaneEnabled?: boolean,
+  navContentPaneEnabled?: boolean,
 }
 
-export class PowerBIReport extends React.Component<IProps, {}> {
+export class PowerBIReport extends React.Component<PowerBIReportProps, {}> {
   component: pbi.Embed;
   rootElement: HTMLElement;
   
-  constructor(props: IProps) {
+  constructor(props: PowerBIReportProps) {
     super(props);
     this.component = null;
     this.state = {
@@ -30,7 +39,7 @@ export class PowerBIReport extends React.Component<IProps, {}> {
     this.updateState(this.props);
   }
 
-  componentWillReceiveProps(nextProps: IProps) {
+  componentWillReceiveProps(nextProps: PowerBIReportProps) {
     this.updateState(nextProps);
   }
 
@@ -57,7 +66,7 @@ export class PowerBIReport extends React.Component<IProps, {}> {
     this.component = null;
   }
 
-  updateState(props: IProps) {
+  updateState(props: PowerBIReportProps) {
     const nextState = util.assign({}, this.state, props, {
       settings: {
         filterPaneEnabled: this.props.filterPaneEnabled,
@@ -80,7 +89,16 @@ export class PowerBIReport extends React.Component<IProps, {}> {
 
   render() {
     return (
-      <div className="powerbi-frame" ref={(ref) => this.rootElement = ref}></div>
+      <div>
+        <div className="powerbi-frame" ref={(ref) => this.rootElement = ref}></div>
+        <div>
+          Token: <pre>{this.props.accessToken}</pre>
+          Url: <pre>{this.props.embedUrl}</pre>
+          id: <pre>{this.props.id}</pre>
+          type: <pre>{this.props.type}</pre>
+          mode: <pre>{this.props.mode} ({this.props.viewMode})</pre>
+        </div>
+      </div>
     )
   }
 }
@@ -90,4 +108,4 @@ export class PowerBIReport extends React.Component<IProps, {}> {
 //   embedUrl: React.PropTypes.string
 // }
 
-export default PowerBIReport;
+//export default PowerBIReport;
