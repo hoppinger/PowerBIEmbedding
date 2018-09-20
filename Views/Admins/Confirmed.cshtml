@@ -1,0 +1,10 @@
+@using Newtonsoft.Json;
+@{
+    ViewData["Title"] = "Confirm email";
+}
+
+<div id="react-content"></div>
+
+<script>
+  app.Confirmed_to("@ViewData["Message"]", "@ViewData["slug"]", "react-content")
+</script>

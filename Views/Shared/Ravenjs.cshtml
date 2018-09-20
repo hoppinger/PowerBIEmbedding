@@ -1,0 +1,52 @@
+<script src="https://cdn.ravenjs.com/3.20.1/raven.min.js" crossorigin="anonymous"></script>
+<script>
+    Raven.config('https://72846ff92dd24db1accd56521e80a13d@sentry.io/252615', {
+        release: '1',
+        whitelistUrls: [
+            /localhost:5000/
+        ],
+        sampleRate: 0.5, // send 50% of events, drop the other half
+        ignoreErrors: [
+            // Random plugins/extensions
+            'top.GLOBALS',
+            // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error. html
+            'originalCreateNotification',
+            'canvas.contentDocument',
+            'MyApp_RemoveAllHighlights',
+            'http://tt.epicplay.com',
+            'Cant find variable: ZiteReader',
+            'jigsaw is not defined',
+            'ComboSearch is not defined',
+            'http://loading.retry.widdit.com/',
+            'atomicFindClose',
+            // Facebook borked
+            'fb_xd_fragment',
+            // ISP "optimizing" proxy - Cache-Control: no-transform seems to
+            // reduce this.
+            // See http://stackoverflow.com/questions/4113268
+            'bmi_SafeAddOnload',
+            'EBCallBackMessageReceived',
+            // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
+            'conduitPage'
+        ],
+        ignoreUrls: [
+            // Facebook flakiness
+            /graph\.facebook\.com/i,
+            // Facebook blocked
+            /connect\.facebook\.net\/en_US\/all\.js/i,
+            // Woopra flakiness
+            /eatdifferent\.com\.woopra-ns\.com/i,
+            /static\.woopra\.com\/js\/woopra\.js/i,
+            // Chrome extensions
+            /extensions\//i,
+            /^chrome:\/\//i,
+            // Other plugins
+            /127\.0\.0\.1:4001\/isrunning/i,  // Cacaoweb
+            /webappstoolbarba\.texthelp\.com\//i,
+            /metrics\.itunes\.apple\.com\.edgesuite\.net\//i
+        ]
+    }).install()
+    window.onunhandledrejection = function (evt) {
+        Raven.captureException(evt.reason);
+    };
+</script>

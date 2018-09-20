@@ -1,0 +1,17 @@
+.message {
+  display: block;
+  padding: 10px;
+  margin: 10px 0;
+
+  &--error {
+      background-color: #f1dddd;
+      border: 1px solid darken(#f1dddd, 20);
+      color: darken(#f1dddd, 40);
+  }
+
+  &--info {
+      background-color: #d8ecf7;
+      border: 1px solid darken(#d8ecf7, 20);
+      color: darken(#d8ecf7, 40);
+  }
+}

@@ -1,0 +1,5 @@
+export * from './HomePage'
+export * from './Admin'
+export * from './BIDiagram'
+export * from './ResetPassword'
+export * from './Confirmed'

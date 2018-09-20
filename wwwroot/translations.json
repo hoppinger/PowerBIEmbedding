@@ -1,0 +1,38 @@
+{
+  "en": {
+    "translation": {
+      "Change language": "Change language",
+      "HomePage": "Home",
+      "WelcomeMessage": "Welcome message",
+      "login_failed": "The combination of the email address and password is unkown. Please try again.",
+      "temporarily_blocked": "There has been 5 unsuccessfull login attempts for this account. Please wait 30 seconds and try again.",
+      "register_success": "Your account is created. A activation link is send to the provided mail addres to active your account.",
+      "register_failed": "Something went wrong. Please check all the data and try again.",
+      "request_reset_success": "A request to reset your password has been send. Please check your email.",
+      "request_reset_failed": "Error. Please insert your email and select your role and try again.",
+      "reset_info": "Use the form below to change your password.",
+      "reset_success": "Your password has been reset. You can close your browser now or use the login form to login.",
+      "reset_failed": "The reset of the password failed. Confirm the given passwords are identical and try again.",
+      "change_password_success": "Your password is successfully changed.",
+      "change_password_failed": "Error when changing the password. Please confirm both passwords are identical and try again."
+    }
+  },
+  "nl": {
+    "translation": {
+      "Change language": "Kies taal",
+      "HomePage": "Home",
+      "WelcomeMessage": "Welkom bericht",
+      "login_failed": "De combinatie van het email addres en wachtwoord is niet bekend. Probeer het opnieuw.",
+      "temporarily_blocked": "Er zijn 5 incorrecte login pogingen geweest voor dit account. Probeer het over 30 seconden opnieuw.",
+      "register_success": "Het account is aangemaakt. Een activatie link is gestuurd naar het ingevuld mail address om je account te activeren.",
+      "register_failed": "Er is iets fout gegaan tijdens het registreren. Controleer de ingevulde gegevens en probeer het opnieuw",
+      "request_reset_success": "Er is een email verstuurd met instructies om je wachtwoord te wijzigen.",
+      "request_reset_failed": "Het aanvragen van een nieuw wachtwoord is niet gelukt. Controleer de gegevens en probeer het opnieuw.",
+      "reset_info": "Gebruiker het formulier hieronder om een nieuw wachtwoord in te stellen",
+      "reset_success": "Het opnieuw instellen van het wachtwoord is geslaagd. De browser kan nu worden afgesloten.",
+      "reset_failed": "Het opnieuw instellen van het wachtwoord is niet gelukt. Controleer of de wachtwoorden overeen komen en probeer het opnieuw.",
+      "change_password_success": "Het wachtwoord is met success gewijzigd",
+      "change_password_failed": "Het wijzigen van het wachtwoord is niet gelukt. Controleer of de wachtwoorden overeen komen en probeer het opnieuw."
+    }
+  }
+}

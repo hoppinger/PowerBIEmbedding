@@ -1,0 +1,36 @@
+{
+  "name": "TestApplication_client_application",
+  "version": "0.0.1",
+  "scripts": {
+    "be": "dotnet watch run environment=development",
+    "fe": "webpack -w",
+    "fe-min": "webpack -p --output-filename=site.min.js",
+    "css": "gulp"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "monadic_react": "^1.0.62",
+    "monadic_react_lib": "^1.1.0",
+    "powerbi-client": "^2.6.4"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.3.0",
+    "babel-env": "^2.4.1",
+    "babel-loader": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.4.2",
+    "webpack": "^3.8.1"
+  },
+  "-vs-binding": {
+    "ProjectOpened": [
+      "build",
+      "stylesheets"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DebugType>portable</DebugType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>PowerBIPoC</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>PowerBIPoC</PackageId>
+    <UserSecretsId>aspnet-PowerBIPoC-2dff800a-aaf5-40b7-b365-90ccdba3b26d</UserSecretsId>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="wwwroot\**\*;Dockerfile.debug;Dockerfile;docker-compose.debug.yml;docker-compose.yml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+<ItemGroup>
+  <PackageReference Include="Hoppinger.QueryGenerator" Version="1.0.*" />
+  <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
+  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="2.0.0-preview1-final">
+    <PrivateAssets>All</PrivateAssets>
+  </PackageReference>
+  <PackageReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+  <PackageReference Include="Microsoft.PowerBI.JavaScript" Version="2.6.4" />
+  <PackageReference Include="Newtonsoft.Json" Version="10.0.*" />
+  <PackageReference Include="runtime.linux-x64.CoreCompat.System.Drawing" Version="1.0.0-beta009" />
+  <PackageReference Include="SendGrid" Version="9.*" />
+  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.0.0" />
+  <PackageReference Include="SharpRaven" Version="2.2.0" />
+  <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  <PackageReference Include="NLog.Gelf" version="1.0.12-beta" />
+  <PackageReference Include="NLog.Web.AspNetCore" version="4.3.1" />
+  <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
+  <PackageReference Include="runtime.linux-x64.CoreCompat.System.Drawing" Version="1.0.0-beta009" />
+  <PackageReference Include="WindowsAzure.Storage" Version="8.5.0" />
+</ItemGroup>
+
+<ItemGroup>
+  <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.4.337" />
+  <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+  <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+  <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+</ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "lib" : [ "dom", "es2015" ],
+        "outDir": "./obj/js",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react"
+    }, 
+     "include": [
+      "./Client/**/*.ts",
+      "./Client/**/*.tsx"
+    ],
+   "exclude": [
+      "/**/node_modules/*"
+    ]
+}
