@@ -1,0 +1,78 @@
+{ "namespace"                  : "PowerBIPoC"
+, "context_name"               : "PowerBIPoCContext"
+, "api_version"                : "v1"
+, "database_provider"          : "postgresql"
+, "dotnet_version"             : "dotnet2"
+, "custom_view_imports"        : "import * as CustomViews from '../custom_views'"
+, "custom_restriction_imports" : ""
+, "skip_forced_id_increment"   : false
+, "url_prefix"                 : "admin"
+, "generate_query_endpoint"    : true
+, "models":
+  [ { "name"               : "HomePage"
+    , "allow_maximisation" : true
+    , "type"               : "homepage"
+    , "attributes"         : []
+    , "permissions":
+      { "view"   : ["*"]
+      , "edit"   : ["Admin"]
+      , "delete" : []
+      , "create" : []
+      }
+    }
+  , { "name"             : "Admin"
+    , "can_login"        : true
+    , "allow_fullscreen" : true
+    , "attributes":
+      [ { "type": "null", "name": "AdminId", "dbname": "AdminId" }
+      , { "type": "string", "name": "Username" }
+      , { "type": "string", "name": "Language" }
+      , { "type": "email", "name": "Email", "hidden_when_minimised": true }
+      ],
+      "permissions":
+      { "view"   : ["Admin"]
+      , "edit"   : ["Admin"]
+      , "delete" : ["Admin"]
+      , "create" : ["Admin"]
+      },
+      "seeds":
+        [ { "Id": 1, "Username": "\"hoppinger\"", "Language":"\"en\"", "Email": "\"info@hoppinger.com\"", "Password":"\"test1234\"" }
+        ]
+    },
+    { "name"               : "BIDiagram"
+    , "dbname"             : "BIDiagram"
+    , "allow_maximisation" : true
+    , "attributes":
+      [ { "type": "null", "name": "ActivityId", "dbname": "ActivityId", "custom_rendering": "CustomViews.renderEntityId" }
+      , { "type": "string", "name": "Title" }
+      , { "type": "null", "name": "GenerateRepeatingActivityEditions", "custom_rendering": "CustomViews.GenerateRepeatingActivityEditions", "hidden_when_minimised": true ,"hidden_label":true }
+      ]
+    , "presentation_structure": 
+      [ { "kind": "attribute", "name": "ActivityId" }
+      , { "kind": "attribute", "name": "Title" }
+      , { "kind": "attribute", "name": "GenerateRepeatingActivityEditions" }
+      ]
+    , "permissions":
+      { "view"   : ["*"]
+      , "edit"   : ["*"]
+      , "delete" : ["*"]
+      , "create" : ["*"]
+      }      
+    }
+
+  ]
+, "relations":
+  [
+   { "source" : "HomePage"
+    , "target" : "BIDiagram"
+    , "sort"   : "1-N"
+    , "seeds"  : []
+    , "permissions":
+      { "view"   : ["*"]
+      , "edit"   : ["*"]
+      , "delete" : ["*"]
+      , "create" : ["*"]
+      }
+    }
+  ]
+}
