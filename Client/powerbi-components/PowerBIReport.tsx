@@ -19,14 +19,14 @@ export class PowerBIReport extends React.Component<TokenInfo, {}> {
   }
   
     public render() {
-      /*
+      
       return (
             <div>
                 <div className="embedContainer" ref={this.ref}></div>
                 
             </div>
       )
-      */
+      /*
       return (
         <div>
           <div className="embedContainer" ref={this.ref}></div>
@@ -38,7 +38,7 @@ export class PowerBIReport extends React.Component<TokenInfo, {}> {
             mode: <pre>{this.props.mode} ({this.props.viewMode})</pre>
           </div>
         </div>
-      )
+      )*/
   }
 
     private embed() {
