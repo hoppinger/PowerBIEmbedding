@@ -3,9 +3,9 @@ import * as pbi from 'powerbi-client';
 import * as pbimodels from "powerbi-models";
 
 export interface TokenInfo extends pbi.IEmbedConfiguration {
-    reportId?: string,
+    //reportId?: string,
     mode?: string,
-    name?: string,
+    //name?: string,
 }
 
 export class PowerBIReport extends React.Component<TokenInfo, {}> {
@@ -21,23 +21,31 @@ export class PowerBIReport extends React.Component<TokenInfo, {}> {
         return (
             <div>
                 <div className="embedContainer" ref={this.ref}></div>
-                <div>
-                Token: <pre>{this.props.accessToken}</pre>
-                Url: <pre>{this.props.embedUrl}</pre>
-                id: <pre>{this.props.id}</pre>
-                type: <pre>{this.props.type}</pre>
-                mode: <pre>{this.props.mode} ({this.props.viewMode})</pre>
-                </div>
+                
             </div>
-        )
-    }
+      )
+      /*
+      return (
+        <div>
+          <div className="embedContainer" ref={this.ref}></div>
+          <div>
+            Token: <pre>{this.props.accessToken}</pre>
+            Url: <pre>{this.props.embedUrl}</pre>
+            id: <pre>{this.props.id}</pre>
+            type: <pre>{this.props.type}</pre>
+            mode: <pre>{this.props.mode} ({this.props.viewMode})</pre>
+          </div>
+        </div>
+      )*/
+  }
+
     private embed() {
         if (!this.ref.current) return;
         let reportProps: TokenInfo = {...this.props} as TokenInfo;
         reportProps.tokenType = pbimodels.TokenType.Embed;
         reportProps.type = 'report';
         if (this.props.mode == "Create") {
-            delete(reportProps.reportId);
+            //delete(reportProps.reportId);
             delete(reportProps.id);
             //AD
             let config: TokenInfo = {
@@ -51,7 +59,14 @@ export class PowerBIReport extends React.Component<TokenInfo, {}> {
             let config: TokenInfo = {
                 accessToken: reportProps.accessToken,
                 type: 'report',
-                embedUrl: reportProps.embedUrl
+              embedUrl: reportProps.embedUrl,
+              id: reportProps.id,
+              permissions: pbimodels.Permissions.All,
+              tokenType: pbimodels.TokenType.Embed,
+              settings: {
+                filterPaneEnabled: true,
+                navContentPaneEnabled: true
+              }
             }
             reportProps.permissions = pbimodels.Permissions.All;
             console.log(reportProps);
