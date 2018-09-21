@@ -45,7 +45,7 @@ namespace PowerBIPoC.Controllers
         if (reports.Value.Count() == 0)
         {
           result.ErrorMessage = "No reports were found in the workspace";
-          return View(result);
+          return Ok(result);
         }
 
         Report report;
@@ -62,7 +62,7 @@ namespace PowerBIPoC.Controllers
         if (report == null)
         {
           result.ErrorMessage = "No report with the given ID was found in the workspace. Make sure ReportId is valid.";
-          return View(result);
+          return Ok(result);
         }
 
         var datasets = await client.Datasets.GetDatasetByIdInGroupAsync(WorkspaceId, report.DatasetId);
@@ -97,7 +97,7 @@ namespace PowerBIPoC.Controllers
         if (tokenResponse == null)
         {
           result.ErrorMessage = "Failed to generate embed token.";
-          return View(result);
+          return Ok(result);
         }
 
         // Generate Embed Configuration.
@@ -124,11 +124,11 @@ namespace PowerBIPoC.Controllers
     {
       using (HttpClient client = new HttpClient())
       {
-        var tokenEndpoint = "https://analysis.windows.net/powerbi/api";
+        var tokenEndpoint = "https://login.microsoftonline.com/common/oauth2/authorize";
         var accept = "application/json";
         var userName = "pavelkucherov@hoppinger.com";
-        var password = "123456";
-        var clientId = "";
+        var password = "12213243";
+        var clientId = "dc69b67e-5449-441f-8407-96007cd97711";
 
         client.DefaultRequestHeaders.Add("Accept", accept);
         string postBody = null;
