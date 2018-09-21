@@ -43,14 +43,22 @@
     , "dbname"             : "BIDiagram"
     , "allow_maximisation" : true
     , "attributes":
-      [ { "type": "null", "name": "ActivityId", "dbname": "ActivityId", "custom_rendering": "CustomViews.renderEntityId" }
-      , { "type": "string", "name": "Title" }
-      , { "type": "null", "name": "GenerateRepeatingActivityEditions", "custom_rendering": "CustomViews.GenerateRepeatingActivityEditions", "hidden_when_minimised": true ,"hidden_label":true }
+      [ 
+        { "type": "string", "name": "Title" }
+      , { "type": "string", "name": "AccessToken" }
+      , { "type": "string", "name": "EmbedUrl" }
+      , { "type": "string", "name": "ReportID" }
+      , { "type": "string", "name": "ReportType" }
+      , { "type": "null", "name": "ShowBIView", "custom_rendering": "CustomViews.ShowBIView", "hidden_when_minimised": true ,"hidden_label":true }
       ]
     , "presentation_structure": 
-      [ { "kind": "attribute", "name": "ActivityId" }
-      , { "kind": "attribute", "name": "Title" }
-      , { "kind": "attribute", "name": "GenerateRepeatingActivityEditions" }
+      [ 
+        { "kind": "attribute", "name": "Title" }
+      , { "kind": "attribute", "name": "AccessToken" }
+      , { "kind": "attribute", "name": "EmbedUrl" }
+      , { "kind": "attribute", "name": "ReportID" }
+      , { "kind": "attribute", "name": "ReportType" }
+      , { "kind": "attribute", "name": "ShowBIView" }
       ]
     , "permissions":
       { "view"   : ["*"]

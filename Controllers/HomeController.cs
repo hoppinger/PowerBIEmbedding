@@ -27,7 +27,6 @@ namespace PowerBIPoC.Controllers
       _projectNameOptions = projectNameOptions.Value;
     }
 
-    [Route("")]
     [Route("admin")]
     [HttpGet("admin/Home/{*slug}")]
     [HttpGet("admin/Home/Index/{*slug}")]

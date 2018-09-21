@@ -400,7 +400,7 @@ export function render_new_HomePage_HomePage_BIDiagram(self:HomePageContext) {
                       onClick={() =>
                           Api.create_BIDiagram().then(e => {
                               Api.update_BIDiagram(
-                                ({ ...e, ActivityId:"", Title:"", GenerateRepeatingActivityEditions:"" } as Models.BIDiagram)).then(() =>
+                                ({ ...e, Title:"", AccessToken:"", EmbedUrl:"", ReportID:"", ReportType:"", ShowBIView:"" } as Models.BIDiagram)).then(() =>
                                 load_relation_HomePage_HomePage_BIDiagram(self, true, self.props.current_Admin, () =>
                                     self.setState({...self.state(), add_step_BIDiagram_HomePage:"closed"})
                                   )

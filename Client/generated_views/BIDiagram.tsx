@@ -87,18 +87,6 @@ export function set_size_BIDiagram(self:BIDiagramContext, new_size:Utils.EntityS
   })
 }
 
-export function render_BIDiagram_ActivityId_editable_minimised(self:BIDiagramContext) : JSX.Element {
-  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ActivityId_minimised(self)
-  else
-    return !Permissions.can_view_BIDiagram_ActivityId(self.props.current_Admin) ? <div /> :
-          <div className="model__attribute activityid">
-  <label className="attribute-label attribute-label-activityid">{i18next.t(`BIDiagram:ActivityId`, {context: self.props.inline ? "inline" : ""})}</label>
-  <div className="model__attribute-content">
-    {CustomViews.renderEntityId({...self.props})}
-  </div>
-</div>
-}
-
 export function render_BIDiagram_Title_editable_minimised(self:BIDiagramContext) : JSX.Element {
   if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_Title_minimised(self)
   else
@@ -116,25 +104,81 @@ export function render_BIDiagram_Title_editable_minimised(self:BIDiagramContext)
 </div>
 }
 
-export function render_BIDiagram_GenerateRepeatingActivityEditions_editable_minimised(self:BIDiagramContext) : JSX.Element {
-  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_GenerateRepeatingActivityEditions_minimised(self)
+export function render_BIDiagram_AccessToken_editable_minimised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_AccessToken_minimised(self)
   else
-    return !Permissions.can_view_BIDiagram_GenerateRepeatingActivityEditions(self.props.current_Admin) ? <div /> :
-          null
-}
-
-
-export function render_BIDiagram_ActivityId_editable_maximised(self:BIDiagramContext) : JSX.Element {
-  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ActivityId_maximised(self)
-  else
-    return !Permissions.can_view_BIDiagram_ActivityId(self.props.current_Admin) ? <div /> :
-          <div className="model__attribute activityid">
-  <label className="attribute-label attribute-label-activityid">{i18next.t(`BIDiagram:ActivityId`, {context: self.props.inline ? "inline" : ""})}</label>
+    return !Permissions.can_view_BIDiagram_AccessToken(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute accesstoken">
+  <label className="attribute-label attribute-label-accesstoken">{i18next.t(`BIDiagram:AccessToken`, {context: self.props.inline ? "inline" : ""})}</label>
   <div className="model__attribute-content">
-    {CustomViews.renderEntityId({...self.props})}
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_AccessToken(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.AccessToken,
+      v => self.props.set_entity({...self.props.entity, AccessToken:v})) }
+      
   </div>
 </div>
 }
+
+export function render_BIDiagram_EmbedUrl_editable_minimised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_EmbedUrl_minimised(self)
+  else
+    return !Permissions.can_view_BIDiagram_EmbedUrl(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute embedurl">
+  <label className="attribute-label attribute-label-embedurl">{i18next.t(`BIDiagram:EmbedUrl`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_EmbedUrl(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.EmbedUrl,
+      v => self.props.set_entity({...self.props.entity, EmbedUrl:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_ReportID_editable_minimised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ReportID_minimised(self)
+  else
+    return !Permissions.can_view_BIDiagram_ReportID(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute reportid">
+  <label className="attribute-label attribute-label-reportid">{i18next.t(`BIDiagram:ReportID`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportID(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportID,
+      v => self.props.set_entity({...self.props.entity, ReportID:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_ReportType_editable_minimised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ReportType_minimised(self)
+  else
+    return !Permissions.can_view_BIDiagram_ReportType(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute reporttype">
+  <label className="attribute-label attribute-label-reporttype">{i18next.t(`BIDiagram:ReportType`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportType(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportType,
+      v => self.props.set_entity({...self.props.entity, ReportType:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_ShowBIView_editable_minimised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ShowBIView_minimised(self)
+  else
+    return !Permissions.can_view_BIDiagram_ShowBIView(self.props.current_Admin) ? <div /> :
+          null
+}
+
 
 export function render_BIDiagram_Title_editable_maximised(self:BIDiagramContext) : JSX.Element {
   if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_Title_maximised(self)
@@ -153,13 +197,81 @@ export function render_BIDiagram_Title_editable_maximised(self:BIDiagramContext)
 </div>
 }
 
-export function render_BIDiagram_GenerateRepeatingActivityEditions_editable_maximised(self:BIDiagramContext) : JSX.Element {
-  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_GenerateRepeatingActivityEditions_maximised(self)
+export function render_BIDiagram_AccessToken_editable_maximised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_AccessToken_maximised(self)
   else
-    return !Permissions.can_view_BIDiagram_GenerateRepeatingActivityEditions(self.props.current_Admin) ? <div /> :
-          <div className="model__attribute generaterepeatingactivityeditions">
+    return !Permissions.can_view_BIDiagram_AccessToken(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute accesstoken">
+  <label className="attribute-label attribute-label-accesstoken">{i18next.t(`BIDiagram:AccessToken`, {context: self.props.inline ? "inline" : ""})}</label>
   <div className="model__attribute-content">
-    {CustomViews.GenerateRepeatingActivityEditions({...self.props})}
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_AccessToken(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.AccessToken,
+      v => self.props.set_entity({...self.props.entity, AccessToken:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_EmbedUrl_editable_maximised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_EmbedUrl_maximised(self)
+  else
+    return !Permissions.can_view_BIDiagram_EmbedUrl(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute embedurl">
+  <label className="attribute-label attribute-label-embedurl">{i18next.t(`BIDiagram:EmbedUrl`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_EmbedUrl(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.EmbedUrl,
+      v => self.props.set_entity({...self.props.entity, EmbedUrl:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_ReportID_editable_maximised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ReportID_maximised(self)
+  else
+    return !Permissions.can_view_BIDiagram_ReportID(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute reportid">
+  <label className="attribute-label attribute-label-reportid">{i18next.t(`BIDiagram:ReportID`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportID(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportID,
+      v => self.props.set_entity({...self.props.entity, ReportID:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_ReportType_editable_maximised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ReportType_maximised(self)
+  else
+    return !Permissions.can_view_BIDiagram_ReportType(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute reporttype">
+  <label className="attribute-label attribute-label-reporttype">{i18next.t(`BIDiagram:ReportType`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportType(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportType,
+      v => self.props.set_entity({...self.props.entity, ReportType:v})) }
+      
+  </div>
+</div>
+}
+
+export function render_BIDiagram_ShowBIView_editable_maximised(self:BIDiagramContext) : JSX.Element {
+  if (!Permissions.can_edit_BIDiagram(self.props.current_Admin)) return render_BIDiagram_ShowBIView_maximised(self)
+  else
+    return !Permissions.can_view_BIDiagram_ShowBIView(self.props.current_Admin) ? <div /> :
+          <div className="model__attribute showbiview">
+  <div className="model__attribute-content">
+    {CustomViews.ShowBIView({...self.props})}
   </div>
 </div>
 }
@@ -167,7 +279,11 @@ export function render_BIDiagram_GenerateRepeatingActivityEditions_editable_maxi
 
 export function render_editable_attributes_minimised_BIDiagram(self:BIDiagramContext) {
   let attributes = (<div>
-      {render_BIDiagram_Title_editable_minimised(self)}{CustomViews.renderEntityId({...self.props})}
+      {render_BIDiagram_Title_editable_minimised(self)}
+        {render_BIDiagram_AccessToken_editable_minimised(self)}
+        {render_BIDiagram_EmbedUrl_editable_minimised(self)}
+        {render_BIDiagram_ReportID_editable_minimised(self)}
+        {render_BIDiagram_ReportType_editable_minimised(self)}
     </div>)
   return attributes
 }
@@ -175,8 +291,11 @@ export function render_editable_attributes_minimised_BIDiagram(self:BIDiagramCon
 export function render_editable_attributes_maximised_BIDiagram(self:BIDiagramContext) {
     let state = self.state()
     let attributes = (<div>
-        {render_BIDiagram_Title_editable_maximised(self)}{CustomViews.renderEntityId({...self.props})}
-        {CustomViews.GenerateRepeatingActivityEditions({...self.props})}
+        {render_BIDiagram_Title_editable_maximised(self)}
+        {render_BIDiagram_AccessToken_editable_maximised(self)}
+        {render_BIDiagram_EmbedUrl_editable_maximised(self)}
+        {render_BIDiagram_ReportID_editable_maximised(self)}
+        {render_BIDiagram_ReportType_editable_maximised(self)}{CustomViews.ShowBIView({...self.props})}
         
         
       </div>)
@@ -307,16 +426,7 @@ export function render_content_BIDiagram(self:BIDiagramContext) {
       </div>
 }
 
-export function render_BIDiagram_ActivityId_minimised(self:BIDiagramContext) : JSX.Element {
-      return !Permissions.can_view_BIDiagram_ActivityId(self.props.current_Admin) ? null : <div className="model__attribute activityid">
-  <label className="attribute-label attribute-label-activityid">{i18next.t(`BIDiagram:ActivityId`, {context: self.props.inline ? "inline" : ""})}</label>
-  <div className="model__attribute-content">
-    {CustomViews.renderEntityId({...self.props})}
-  </div>
-</div>
-      
-}
-        export function render_BIDiagram_Title_minimised(self:BIDiagramContext) : JSX.Element {
+export function render_BIDiagram_Title_minimised(self:BIDiagramContext) : JSX.Element {
       return !Permissions.can_view_BIDiagram_Title(self.props.current_Admin) ? null : <div className="model__attribute title">
   <label className="attribute-label attribute-label-title">{i18next.t(`BIDiagram:Title`, {context: self.props.inline ? "inline" : ""})}</label>
   <div className="model__attribute-content">
@@ -330,19 +440,67 @@ export function render_BIDiagram_ActivityId_minimised(self:BIDiagramContext) : J
 </div>
       
 }
-        export function render_BIDiagram_GenerateRepeatingActivityEditions_minimised(self:BIDiagramContext) : JSX.Element {
+        export function render_BIDiagram_AccessToken_minimised(self:BIDiagramContext) : JSX.Element {
+      return !Permissions.can_view_BIDiagram_AccessToken(self.props.current_Admin) ? null : <div className="model__attribute accesstoken">
+  <label className="attribute-label attribute-label-accesstoken">{i18next.t(`BIDiagram:AccessToken`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_AccessToken(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.AccessToken,
+      v => self.props.set_entity({...self.props.entity, AccessToken:v})) }
+      
+  </div>
+</div>
+      
+}
+        export function render_BIDiagram_EmbedUrl_minimised(self:BIDiagramContext) : JSX.Element {
+      return !Permissions.can_view_BIDiagram_EmbedUrl(self.props.current_Admin) ? null : <div className="model__attribute embedurl">
+  <label className="attribute-label attribute-label-embedurl">{i18next.t(`BIDiagram:EmbedUrl`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_EmbedUrl(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.EmbedUrl,
+      v => self.props.set_entity({...self.props.entity, EmbedUrl:v})) }
+      
+  </div>
+</div>
+      
+}
+        export function render_BIDiagram_ReportID_minimised(self:BIDiagramContext) : JSX.Element {
+      return !Permissions.can_view_BIDiagram_ReportID(self.props.current_Admin) ? null : <div className="model__attribute reportid">
+  <label className="attribute-label attribute-label-reportid">{i18next.t(`BIDiagram:ReportID`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportID(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportID,
+      v => self.props.set_entity({...self.props.entity, ReportID:v})) }
+      
+  </div>
+</div>
+      
+}
+        export function render_BIDiagram_ReportType_minimised(self:BIDiagramContext) : JSX.Element {
+      return !Permissions.can_view_BIDiagram_ReportType(self.props.current_Admin) ? null : <div className="model__attribute reporttype">
+  <label className="attribute-label attribute-label-reporttype">{i18next.t(`BIDiagram:ReportType`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportType(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportType,
+      v => self.props.set_entity({...self.props.entity, ReportType:v})) }
+      
+  </div>
+</div>
+      
+}
+        export function render_BIDiagram_ShowBIView_minimised(self:BIDiagramContext) : JSX.Element {
       return null
 }
 
-export function render_BIDiagram_ActivityId_maximised(self:BIDiagramContext) : JSX.Element {
-        return !Permissions.can_view_BIDiagram_ActivityId(self.props.current_Admin) ? null : <div className="model__attribute activityid">
-  <label className="attribute-label attribute-label-activityid">{i18next.t(`BIDiagram:ActivityId`, {context: self.props.inline ? "inline" : ""})}</label>
-  <div className="model__attribute-content">
-    {CustomViews.renderEntityId({...self.props})}
-  </div>
-</div>
-}
-        export function render_BIDiagram_Title_maximised(self:BIDiagramContext) : JSX.Element {
+export function render_BIDiagram_Title_maximised(self:BIDiagramContext) : JSX.Element {
         return !Permissions.can_view_BIDiagram_Title(self.props.current_Admin) ? null : <div className="model__attribute title">
   <label className="attribute-label attribute-label-title">{i18next.t(`BIDiagram:Title`, {context: self.props.inline ? "inline" : ""})}</label>
   <div className="model__attribute-content">
@@ -355,10 +513,62 @@ export function render_BIDiagram_ActivityId_maximised(self:BIDiagramContext) : J
   </div>
 </div>
 }
-        export function render_BIDiagram_GenerateRepeatingActivityEditions_maximised(self:BIDiagramContext) : JSX.Element {
-        return !Permissions.can_view_BIDiagram_GenerateRepeatingActivityEditions(self.props.current_Admin) ? null : <div className="model__attribute generaterepeatingactivityeditions">
+        export function render_BIDiagram_AccessToken_maximised(self:BIDiagramContext) : JSX.Element {
+        return !Permissions.can_view_BIDiagram_AccessToken(self.props.current_Admin) ? null : <div className="model__attribute accesstoken">
+  <label className="attribute-label attribute-label-accesstoken">{i18next.t(`BIDiagram:AccessToken`, {context: self.props.inline ? "inline" : ""})}</label>
   <div className="model__attribute-content">
-    {CustomViews.GenerateRepeatingActivityEditions({...self.props})}
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_AccessToken(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.AccessToken,
+      v => self.props.set_entity({...self.props.entity, AccessToken:v})) }
+      
+  </div>
+</div>
+}
+        export function render_BIDiagram_EmbedUrl_maximised(self:BIDiagramContext) : JSX.Element {
+        return !Permissions.can_view_BIDiagram_EmbedUrl(self.props.current_Admin) ? null : <div className="model__attribute embedurl">
+  <label className="attribute-label attribute-label-embedurl">{i18next.t(`BIDiagram:EmbedUrl`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_EmbedUrl(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.EmbedUrl,
+      v => self.props.set_entity({...self.props.entity, EmbedUrl:v})) }
+      
+  </div>
+</div>
+}
+        export function render_BIDiagram_ReportID_maximised(self:BIDiagramContext) : JSX.Element {
+        return !Permissions.can_view_BIDiagram_ReportID(self.props.current_Admin) ? null : <div className="model__attribute reportid">
+  <label className="attribute-label attribute-label-reportid">{i18next.t(`BIDiagram:ReportID`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportID(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportID,
+      v => self.props.set_entity({...self.props.entity, ReportID:v})) }
+      
+  </div>
+</div>
+}
+        export function render_BIDiagram_ReportType_maximised(self:BIDiagramContext) : JSX.Element {
+        return !Permissions.can_view_BIDiagram_ReportType(self.props.current_Admin) ? null : <div className="model__attribute reporttype">
+  <label className="attribute-label attribute-label-reporttype">{i18next.t(`BIDiagram:ReportType`, {context: self.props.inline ? "inline" : ""})}</label>
+  <div className="model__attribute-content">
+    { Components.String(
+      self.props.is_editable && Permissions.can_edit_BIDiagram(self.props.current_Admin) && Permissions.can_edit_BIDiagram_ReportType(self.props.current_Admin),
+      self.props.mode,
+      () => self.props.entity.ReportType,
+      v => self.props.set_entity({...self.props.entity, ReportType:v})) }
+      
+  </div>
+</div>
+}
+        export function render_BIDiagram_ShowBIView_maximised(self:BIDiagramContext) : JSX.Element {
+        return !Permissions.can_view_BIDiagram_ShowBIView(self.props.current_Admin) ? null : <div className="model__attribute showbiview">
+  <div className="model__attribute-content">
+    {CustomViews.ShowBIView({...self.props})}
   </div>
 </div>
 }
@@ -366,15 +576,21 @@ export function render_BIDiagram_ActivityId_maximised(self:BIDiagramContext) : J
 export function render_preview_BIDiagram(self:BIDiagramContext) {
   if (self.props.mode == "view" || !Permissions.can_edit_BIDiagram(self.props.current_Admin))
     return (<div className="block">
-        { render_BIDiagram_ActivityId_minimised(self) }
-    { render_BIDiagram_Title_minimised(self) }
-    { render_BIDiagram_GenerateRepeatingActivityEditions_minimised(self) }
+        { render_BIDiagram_Title_minimised(self) }
+    { render_BIDiagram_AccessToken_minimised(self) }
+    { render_BIDiagram_EmbedUrl_minimised(self) }
+    { render_BIDiagram_ReportID_minimised(self) }
+    { render_BIDiagram_ReportType_minimised(self) }
+    { render_BIDiagram_ShowBIView_minimised(self) }
     </div>)
   else
     return (<div className="block">
-        { render_BIDiagram_ActivityId_editable_minimised(self) }
-    { render_BIDiagram_Title_editable_minimised(self) }
-    { render_BIDiagram_GenerateRepeatingActivityEditions_editable_minimised(self) }
+        { render_BIDiagram_Title_editable_minimised(self) }
+    { render_BIDiagram_AccessToken_editable_minimised(self) }
+    { render_BIDiagram_EmbedUrl_editable_minimised(self) }
+    { render_BIDiagram_ReportID_editable_minimised(self) }
+    { render_BIDiagram_ReportType_editable_minimised(self) }
+    { render_BIDiagram_ShowBIView_editable_minimised(self) }
     </div>)
 
 }
@@ -383,9 +599,12 @@ export function render_large_BIDiagram(self:BIDiagramContext) {
   let state = self.state()
   if (self.props.mode == "view" || !Permissions.can_edit_BIDiagram(self.props.current_Admin)) {
     let attributes = <div>
-        { render_BIDiagram_ActivityId_maximised(self) }
-    { render_BIDiagram_Title_maximised(self) }
-    { render_BIDiagram_GenerateRepeatingActivityEditions_maximised(self) }
+        { render_BIDiagram_Title_maximised(self) }
+    { render_BIDiagram_AccessToken_maximised(self) }
+    { render_BIDiagram_EmbedUrl_maximised(self) }
+    { render_BIDiagram_ReportID_maximised(self) }
+    { render_BIDiagram_ReportType_maximised(self) }
+    { render_BIDiagram_ShowBIView_maximised(self) }
         
       </div>
     return (<div className="block">
@@ -394,9 +613,12 @@ export function render_large_BIDiagram(self:BIDiagramContext) {
     </div>)
   } else {
     let attributes = <div>
-        { render_BIDiagram_ActivityId_editable_maximised(self) }
-    { render_BIDiagram_Title_editable_maximised(self) }
-    { render_BIDiagram_GenerateRepeatingActivityEditions_editable_maximised(self) }
+        { render_BIDiagram_Title_editable_maximised(self) }
+    { render_BIDiagram_AccessToken_editable_maximised(self) }
+    { render_BIDiagram_EmbedUrl_editable_maximised(self) }
+    { render_BIDiagram_ReportID_editable_maximised(self) }
+    { render_BIDiagram_ReportType_editable_maximised(self) }
+    { render_BIDiagram_ShowBIView_editable_maximised(self) }
         
         
       </div>

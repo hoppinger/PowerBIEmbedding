@@ -92,25 +92,28 @@ namespace PowerBIPoC.Data
           
           
             
-            _BIDiagram.Add(0, new BIDiagram { CreatedDate = DateTime.Now, Title = "75c6-50a3",   });
+            _BIDiagram.Add(0, new BIDiagram { CreatedDate = DateTime.Now, Title = "da51-6360", AccessToken = "99ce-3dfe", EmbedUrl = "1ecc-492a", ReportID = "bb3f-26eb", ReportType = "0ef5-8671",   });
 
             
-            _BIDiagram.Add(1, new BIDiagram { CreatedDate = DateTime.Now, Title = "b2a0-3aa1",   });
+            _BIDiagram.Add(1, new BIDiagram { CreatedDate = DateTime.Now, Title = "f215-f943", AccessToken = "013a-d56f", EmbedUrl = "6c25-274b", ReportID = "d69f-0492", ReportType = "111c-fa5f",   });
 
             
-            _BIDiagram.Add(2, new BIDiagram { CreatedDate = DateTime.Now, Title = "a69f-9dfd",   });
+            _BIDiagram.Add(2, new BIDiagram { CreatedDate = DateTime.Now, Title = "502a-d68c", AccessToken = "716d-2e06", EmbedUrl = "7b09-6787", ReportID = "f893-f751", ReportType = "1ec2-62e8",   });
 
             
-            _BIDiagram.Add(3, new BIDiagram { CreatedDate = DateTime.Now, Title = "e987-8681",   });
+            _BIDiagram.Add(3, new BIDiagram { CreatedDate = DateTime.Now, Title = "7c31-6470", AccessToken = "0d51-d488", EmbedUrl = "a943-edda", ReportID = "b9f5-47ea", ReportType = "0bf9-bd8b",   });
 
             
-            _BIDiagram.Add(4, new BIDiagram { CreatedDate = DateTime.Now, Title = "89ef-aa2d",   });
+            _BIDiagram.Add(4, new BIDiagram { CreatedDate = DateTime.Now, Title = "eb2b-f03d", AccessToken = "2a35-c031", EmbedUrl = "4a00-73d9", ReportID = "5d85-d862", ReportType = "f2d8-dbe8",   });
 
             
-            _BIDiagram.Add(5, new BIDiagram { CreatedDate = DateTime.Now, Title = "b1a1-6198",   });
+            _BIDiagram.Add(5, new BIDiagram { CreatedDate = DateTime.Now, Title = "1f11-37a7", AccessToken = "b5e9-85b2", EmbedUrl = "408e-221e", ReportID = "1f44-f78e", ReportType = "5b2c-aac7",   });
 
             
-            _BIDiagram.Add(6, new BIDiagram { CreatedDate = DateTime.Now, Title = "30ce-af5b",   });
+            _BIDiagram.Add(6, new BIDiagram { CreatedDate = DateTime.Now, Title = "1cf9-c0a5", AccessToken = "1841-c196", EmbedUrl = "aa0c-06ac", ReportID = "b96a-a312", ReportType = "2c4a-d67a",   });
+
+            
+            _BIDiagram.Add(7, new BIDiagram { CreatedDate = DateTime.Now, Title = "e606-c1c6", AccessToken = "9a3c-b8b8", EmbedUrl = "c768-0db9", ReportID = "2cc8-0781", ReportType = "f69f-d3c1",   });
 
           foreach (var x in _BIDiagram)
           {

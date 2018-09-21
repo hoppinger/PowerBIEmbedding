@@ -62,17 +62,29 @@ static public bool can_view_BIDiagram(Admin current_Admin) { return true; }
 
     static public bool can_delete_BIDiagram(Admin current_Admin) { return true; }
       
-    static public bool can_view_BIDiagram_ActivityId(Admin current_Admin) { return true; }
-
-    static public bool can_edit_BIDiagram_ActivityId(Admin current_Admin) { return true; }
-    
-  static public bool can_view_BIDiagram_Title(Admin current_Admin) { return true; }
+    static public bool can_view_BIDiagram_Title(Admin current_Admin) { return true; }
 
     static public bool can_edit_BIDiagram_Title(Admin current_Admin) { return true; }
     
-  static public bool can_view_BIDiagram_GenerateRepeatingActivityEditions(Admin current_Admin) { return true; }
+  static public bool can_view_BIDiagram_AccessToken(Admin current_Admin) { return true; }
 
-    static public bool can_edit_BIDiagram_GenerateRepeatingActivityEditions(Admin current_Admin) { return true; }
+    static public bool can_edit_BIDiagram_AccessToken(Admin current_Admin) { return true; }
+    
+  static public bool can_view_BIDiagram_EmbedUrl(Admin current_Admin) { return true; }
+
+    static public bool can_edit_BIDiagram_EmbedUrl(Admin current_Admin) { return true; }
+    
+  static public bool can_view_BIDiagram_ReportID(Admin current_Admin) { return true; }
+
+    static public bool can_edit_BIDiagram_ReportID(Admin current_Admin) { return true; }
+    
+  static public bool can_view_BIDiagram_ReportType(Admin current_Admin) { return true; }
+
+    static public bool can_edit_BIDiagram_ReportType(Admin current_Admin) { return true; }
+    
+  static public bool can_view_BIDiagram_ShowBIView(Admin current_Admin) { return true; }
+
+    static public bool can_edit_BIDiagram_ShowBIView(Admin current_Admin) { return true; }
     
 
     

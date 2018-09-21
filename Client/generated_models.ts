@@ -24,8 +24,11 @@ HasPassword:boolean
 export type BIDiagram = {
     Id : number
     CreatedDate:Moment.Moment
-    
-  Title : string
+    Title : string
+  AccessToken : string
+  EmbedUrl : string
+  ReportID : string
+  ReportType : string
   
     
     

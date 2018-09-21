@@ -11,8 +11,8 @@ using System;
 namespace PowerBIPoC.Migrations
 {
     [DbContext(typeof(PowerBIPoCContext))]
-    [Migration("20180920114717_SpecChange_20180920314713")]
-    partial class SpecChange_20180920314713
+    [Migration("20180921111550_SpecChange_20180921311545")]
+    partial class SpecChange_20180921311545
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,7 +62,15 @@ namespace PowerBIPoC.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("AccessToken");
+
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("EmbedUrl");
+
+                    b.Property<string>("ReportID");
+
+                    b.Property<string>("ReportType");
 
                     b.Property<string>("Title");
 

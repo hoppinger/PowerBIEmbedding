@@ -12,7 +12,7 @@ import PowerBIDashboardView from "./custom_views/PowerBIDashboardView"
 export const renderEntityId: (props: EntityComponentProps<{ Id: number }>) => JSX.Element =
   props => <div>{"Id: " + props.entity.Id}</div>
 
-export const GenerateRepeatingActivityEditions = (props: ViewUtils.EntityComponentProps<Models.BIDiagram>) => {
+export const ShowBIView = (props: ViewUtils.EntityComponentProps<Models.BIDiagram>) => {
   return (
     <PowerBIDashboardView {...props} />
   )

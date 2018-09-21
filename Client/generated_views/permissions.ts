@@ -50,17 +50,29 @@ export let can_edit_BIDiagram = (current_Admin:Models.Admin) => true
 
 export let can_delete_BIDiagram = (current_Admin:Models.Admin) => true 
 
-export let can_view_BIDiagram_ActivityId = (current_Admin:Models.Admin) => true 
-
-export let can_edit_BIDiagram_ActivityId = (current_Admin:Models.Admin) => true 
-
 export let can_view_BIDiagram_Title = (current_Admin:Models.Admin) => true 
 
 export let can_edit_BIDiagram_Title = (current_Admin:Models.Admin) => true 
 
-export let can_view_BIDiagram_GenerateRepeatingActivityEditions = (current_Admin:Models.Admin) => true 
+export let can_view_BIDiagram_AccessToken = (current_Admin:Models.Admin) => true 
 
-export let can_edit_BIDiagram_GenerateRepeatingActivityEditions = (current_Admin:Models.Admin) => true 
+export let can_edit_BIDiagram_AccessToken = (current_Admin:Models.Admin) => true 
+
+export let can_view_BIDiagram_EmbedUrl = (current_Admin:Models.Admin) => true 
+
+export let can_edit_BIDiagram_EmbedUrl = (current_Admin:Models.Admin) => true 
+
+export let can_view_BIDiagram_ReportID = (current_Admin:Models.Admin) => true 
+
+export let can_edit_BIDiagram_ReportID = (current_Admin:Models.Admin) => true 
+
+export let can_view_BIDiagram_ReportType = (current_Admin:Models.Admin) => true 
+
+export let can_edit_BIDiagram_ReportType = (current_Admin:Models.Admin) => true 
+
+export let can_view_BIDiagram_ShowBIView = (current_Admin:Models.Admin) => true 
+
+export let can_edit_BIDiagram_ShowBIView = (current_Admin:Models.Admin) => true 
 
 
 

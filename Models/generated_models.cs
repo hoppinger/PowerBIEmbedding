@@ -90,6 +90,10 @@ namespace PowerBIPoC.Models
     
     [Newtonsoft.Json.JsonProperty(ItemConverterType = typeof(Newtonsoft.Json.Converters.JavaScriptDateTimeConverter))] public DateTime CreatedDate{ get; set; }
         public string Title {get;set;}
+    public string AccessToken {get;set;}
+    public string EmbedUrl {get;set;}
+    public string ReportID {get;set;}
+    public string ReportType {get;set;}
     
     static public Expression<Func<BIDiagram,BIDiagram>> FilterViewableAttributes(Admin current_Admin) {
       return self => self;

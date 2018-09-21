@@ -16,15 +16,17 @@ export class PowerBIReport extends React.Component<TokenInfo, {}> {
         super(props);
         this.powerbi = new pbi.service.Service(pbi.factories.hpmFactory, pbi.factories.wpmpFactory, pbi.factories.routerFactory);
         this.ref = React.createRef();
-    }
+  }
+  
     public render() {
-        return (
+      /*
+      return (
             <div>
                 <div className="embedContainer" ref={this.ref}></div>
                 
             </div>
       )
-      /*
+      */
       return (
         <div>
           <div className="embedContainer" ref={this.ref}></div>
@@ -36,7 +38,7 @@ export class PowerBIReport extends React.Component<TokenInfo, {}> {
             mode: <pre>{this.props.mode} ({this.props.viewMode})</pre>
           </div>
         </div>
-      )*/
+      )
   }
 
     private embed() {

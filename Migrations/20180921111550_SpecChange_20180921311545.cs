@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PowerBIPoC.Migrations
 {
-    public partial class SpecChange_20180920312053 : Migration
+    public partial class SpecChange_20180921311545 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,6 +28,24 @@ namespace PowerBIPoC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Admin", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BIDiagram",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int4", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    AccessToken = table.Column<string>(type: "text", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    EmbedUrl = table.Column<string>(type: "text", nullable: true),
+                    ReportID = table.Column<string>(type: "text", nullable: true),
+                    ReportType = table.Column<string>(type: "text", nullable: true),
+                    Title = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BIDiagram", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,6 +131,9 @@ namespace PowerBIPoC.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Admin");
+
+            migrationBuilder.DropTable(
+                name: "BIDiagram");
 
             migrationBuilder.DropTable(
                 name: "HomePage");

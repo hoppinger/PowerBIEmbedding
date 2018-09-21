@@ -61,7 +61,15 @@ namespace PowerBIPoC.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("AccessToken");
+
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("EmbedUrl");
+
+                    b.Property<string>("ReportID");
+
+                    b.Property<string>("ReportType");
 
                     b.Property<string>("Title");
 
